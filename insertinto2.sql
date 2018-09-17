@@ -15,11 +15,10 @@ insert into Funcionarios( CPF, telefone, NumCartTrab, idade, nome) values
  (5, 'alogalera', 'bixona', '14152656547','Janderson', '54624587');
 
  insert into Ficha(id, TempUso, saldo, datacriação) values
- (1, 24, 30, '14154236548','Fernanda', '325687454'),
- (2, 5,65, '14154236548','Fernanda', '325687454'),
- (3, 4, 74, '14154236548','Fernanda', '325687454'),
- (4, 65,85, '14154236548','Fernanda', '325687454'),
- (5, 300,500 , '14154236548','Fernanda', '325687454');
+ (1, 24, 30, '2018/02/03'),
+ (2, 5,65, '2018/03/10'),
+ (4, 65,85, '2018/04/12'),
+ (5, 300,500 , '2018/06/15');
 
   insert into Computador( idnum, estado) values
  (1,'Bom'),
