@@ -21,9 +21,10 @@ Create Table Ficha(
 id int not null,
 TempUso int,
 saldo Float,
-datacriação date
+datacriação date,
+idcliente int
 primary key (id)
-Foreign Key (id) references Clientes(id)
+Foreign Key (idcliente) references Clientes(id)
 );
 Create Table Computador(
 idnum int,
@@ -78,29 +79,30 @@ Nome Varchar(20) not null
 Primary Key (Nome)
 );
 Create Table Plataforma(
-Nome Varchar(20) not null
-Primary Key (Nome)
+id int not null,
+Nome Varchar(20) 
+Primary Key (id)
 );
 Create Table Jogo(
-id int not null,
+idjogo int not null,
 Nome Varchar(20),
 ano int,
 desenvolvedora varchar(20)
-Primary Key (id)
+Primary Key (idjogo)
 );
 Create Table GeneroJogo(
 idJogo int not null,
 idGenero varchar(20) not null
 Primary Key(idJogo,idGenero)
-Foreign Key (idJogo) references Jogo(id),
+Foreign Key (idJogo) references Jogo(idjogo),
 Foreign Key (idGenero) references Genero(Nome)
 );
 Create Table PlataformaJogo(
 idJogo int not null,
-idPlat varchar(20) not null
+idPlat int not null
 Primary Key(idJogo,idPlat)
-Foreign Key (idJogo) references Jogo(id),
-Foreign Key (idPlat) references Plataforma(Nome)
+Foreign Key (idJogo) references Jogo(idjogo),
+Foreign Key (idPlat) references Plataforma(id)
 );
 Create Table Exemplar(
 id int,
@@ -109,7 +111,7 @@ NDeCopias int,
 Nome Varchar(20),
 idjogo int not null,
 Primary Key (id),
-Foreign Key (idjogo) references Jogo(id)
+Foreign Key (idjogo) references Jogo(idjogo)
 );
 Create Table ExemplarLocacao(
 idExempJogo int not null,

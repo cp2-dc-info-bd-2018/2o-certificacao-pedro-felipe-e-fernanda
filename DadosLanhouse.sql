@@ -12,20 +12,21 @@ insert into Funcionarios( CPF, telefone, NumCartTrab, idade, nome) values
  (2, 'badugatinho', '12345678', '24542316454','Noah', '30302525'),
  (3, 'lysgd', 'ahclaro', '41548796523','Felipe', '255478545'),
  (4, 'PHASSELMANN', 'SENHA', '52815851485','Pedro', '65852325'),
- (5, 'alogalera', 'bixona', '14152656547','Janderson', '54624587');
+ (5, 'alogalera', 'baiano', '14152656547','Janderson', '54624587');
 
- insert into Ficha(id, TempUso, saldo, datacriacao) values
- (1, 24, 30, '2018/02/03'),
- (2, 5,65, '2018/03/10'),
- (4, 65,85, '2018/04/12'),
- (5, 300,500 , '2018/06/15');
+ insert into Ficha(id, TempUso, saldo, datacriação,idcliente) values
+ (1, 24, 30, '2018/02/03',1),
+ (2, 5,65, '2018/03/10',2),
+ (3, 65,85, '2018/04/12',3),
+ (4, 300,500 , '2018/06/15',4),
+ (5, 34,100 , '2018/06/15',5);
 
   insert into Computador( idnum, estado) values
  (1,'Bom'),
  (2, 'ruim'),
  (3, 'perfeito estado'),
  (4,'condições críticas'),
- (5, 'quebrado');
+ (5, 'quebrado'),
  (6,'Bom'),
  (7, 'perfeito estado'),
  (8, 'perfeito estado'),
@@ -64,12 +65,11 @@ insert into Funcionarios( CPF, telefone, NumCartTrab, idade, nome) values
  (5, 6),
  (5, 8),
  (4, 1),
- (4, 1),
  (4, 9),
  (3, 1);
 
  
-  insert into Locacao(id, dataentrega, prazo, datainicio, idfuncionario, idcliente) values
+  insert into Locacao(id, dataentrega, prazo, dataincio, idfuncionario, idcliente) values
  (1, '2018/03/05','2018/03/10', '2017/12/15', '54679784579',2 ),
  (2, '2015/05/10','2015/06/10' ,'2014/06/20','12512514766', 1),
  (3,'2016/12/14', '2017/02/14','2015/10/25','55569885698', 3),
@@ -84,15 +84,15 @@ insert into Genero(nome) values
  ('Ação'); 
 
  
-insert into Plataforma(nome) values
- ('Windows' ),
- ('PS4' ),
- ('XONE'),
- ('Switch'),
+insert into Plataforma(id,nome) values
+ (1,'Windows'),
+ (2,'PS4'),
+ (3,'XONE'),
+ (4,'Switch');
 
- insert into Jogo(id, nome, ano, desenvolvedora) values
+ insert into Jogo(idjogo, nome, ano, desenvolvedora) values
  (1 ,'GodOFwar4',2018 ,'Santa Monica Studio'),
- (2,'LOL',2010,''),
+ (2,'LOL',2010,'GIOT'),
  (3,'Slenderman', 2008,'Parsec'),
  (4,'Forza horizon',2017,'Microsoft'),
  (5,'Unchated',2016,'Naughty Dog');
@@ -101,17 +101,17 @@ insert into Plataforma(nome) values
  ('RPG',2 ),
  ('Aventura',5 ),
  ('Corrida',4 ),
- ('Terror', 3),
+ ('Terror',3),
  ('Ação', 1 );
 
   insert into PlataformaJogo(idJogo, idPlat) values
- (2,'Windows' ),
- (3, 'Windows'),
- (3, 'XONE'),
- (1,'PS4' ),
- (4, 'Microsoft'),
- (4, 'XONE'),
- (5,'IOS');
+ (2, 1),
+ (3, 1),
+ (3, 3),
+ (1,2 ),
+ (4, 1),
+ (4, 3),
+ (5,2);
 
   insert into Exemplar(id, valor, NDeCopias,nome, idjogo) values
  (1, 39.00 , 10 , 'Forza horizon',4 ),
@@ -128,16 +128,3 @@ insert into Plataforma(nome) values
  (1, 5),
  (2, 5),
  (5, 4);
-
-
-
-
-
-
-
-
-
-
-
-
-
